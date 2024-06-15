@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best cocktails</title>
+    <link rel="shortcut icon" href="./style/img/logo.jpeg" />
+    <link rel="stylesheet" href="./style/2.css">
+</head>
+
+<body>
+    <header>
+        <img src="./style/img/logo.jpeg" alt="log" class="logo">
+        <a class="recipe" href="./2.html">Предложить свой рецепт</a>
+        <a class="call" href="./3.html">Связаться с нами</a>
+        <a class="home" href="./main.html">Главная страница</a>
+    </header>
+
+    <div class="container">
+        <h2>Предложить свой рецепт</h2>
+        <form action="submit.php" method="POST" enctype="multipart/form-data">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="recipe">Рецепт:</label>
+            <textarea id="recipe" name="recipe" rows="6" required></textarea>
+
+            <label for="photo">Фото:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+    
+</body>
+</html>

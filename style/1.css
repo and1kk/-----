@@ -1,0 +1,154 @@
+html, body, header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: url(./img/fone.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+}
+
+header {
+    background: rgb(0,0,0);
+    background: -moz-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(30,32,33,0.4599089635854342) 0%);
+    background: -webkit-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(30,32,33,0.4599089635854342) 0%);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(30,32,33,0.4599089635854342) 0%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#1e2021",GradientType=1);
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid rgb(51, 49, 49);
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between; /* Расположение элементов в пространстве между ними */
+    align-items: center; /* Выравнивание по центру по вертикали */
+   
+}
+
+header:hover {
+    opacity: 1; 
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image fits inside the circle */
+    margin-right: auto; /* Pushes the logo to the left */
+    margin-left: 25px;
+}
+
+.recipe {
+    font-family: 'Art-Nouveau 1895', cursive;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    text-shadow: rgb(3, 3, 3) 1px 3px 0px;
+    margin-left: auto; /* Pushes the recipe link to the right */
+    margin-right: 25px;
+}
+
+
+.call {
+    font-family: 'Art-Nouveau 1895', cursive;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    text-shadow: rgb(3, 3, 3) 1px 3px 0px;
+    margin-left: auto; /* Pushes the recipe link to the right */
+    margin-right: 100px;
+}
+
+.home {
+    font-family: 'Art-Nouveau 1895', cursive;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    text-shadow: rgb(3, 3, 3) 1px 3px 0px;
+    margin-left: auto; /* Pushes the recipe link to the right */
+    margin-right: 200px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111; /* Темный фон */
+    color: #eee; /* Цвет текста */
+    margin: 0;
+    padding: 0;
+}
+
+.cocktail-section {
+    max-width: 1200px; /* Увеличим максимальную ширину для лучшего использования пространства */
+    margin: 20px auto; /* Центрирование блока коктейлей */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Гибкая сетка на мобильных устройствах */
+    grid-gap: 20px; /* Отступ между элементами сетки */
+    justify-items: center; /* Выравнивание элементов по центру */
+    margin-top: 100px;
+}
+
+.cocktail {
+    background-color: rgba(0, 0, 0, 0.8); /* Прозрачный черный фон карточки коктейля */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Тень вокруг карточки */
+    text-align: center;
+    overflow: hidden; /* Скрытие изображения, которое может выходить за границы */
+    position: relative; /* Позиционирование для псевдоэлемента */
+}
+
+.cocktail:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный слой при наведении */
+    z-index: 1;
+}
+
+.cocktail-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Плавное изменение масштаба при наведении */
+}
+
+.cocktail:hover .cocktail-img {
+    transform: scale(1.1); /* Увеличение изображения при наведении */
+}
+
+.cocktail-title {
+    font-size: 18px; /* Уменьшим размер заголовка для лучшей читаемости на мобильных устройствах */
+    margin-bottom: 10px;
+    color: #4CAF50; /* Цвет заголовка */
+}
+
+.cocktail-description {
+    font-size: 14px; /* Уменьшим размер описания для лучшей читаемости на мобильных устройствах */
+    line-height: 1;
+}
+
+@media (min-width: 768px) {
+    .cocktail-section {
+        grid-template-columns: repeat(6, 0.6fr); /* 6 колонок на широком экране */
+    }
+}
+
+@media (max-width: 767px) {
+    .cocktail-section {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Адаптивная сетка на узких экранах */
+    }
+}
